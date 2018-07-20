@@ -10,13 +10,11 @@ import sys, os
 reload(sys)
 sys.setdefaultencoding("utf-8")
 
-st = {"status": "true"}
-sf = {"status": "false"}
-
 # Create your models here.
 class RegisterModel(Document):
     device_model = fields.StringField()    
     time_stamp = fields.DateTimeField()
-    device_imei = fields.StringField()
+    device_imei1 = fields.StringField()
+    device_imei2 = fields.StringField()
     device_brand = fields.StringField()
     diagnose_data = fields.ListField()

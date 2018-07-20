@@ -1,6 +1,9 @@
 import json
 from datetime import datetime as dt, timedelta
 
+st = {"status": "true"}
+sf = {"status": "false"}
+
 def clean(objts):
     res = []
     for obj in objts:

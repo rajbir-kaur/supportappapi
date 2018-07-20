@@ -20,9 +20,9 @@ class Register(APIView):
 	    if not qp: raise
 	    elif not "imei" in qp.keys(): raise
 	    elif "latest" in qp.keys() and qp["latest"]: 
-		obj=RegisterModel.objects(device_imei=qp["imei"]).order_by("-time_stamp").first();obj = [obj]
-	    else: obj=RegisterModel.objects(device_imei=qp["imei"])
-	    return Response(clean(obj),status=status.HTTP_200_OK)
+		obj=RegisterModel.objects(device_imei1=qp["imei"]).order_by("-time_stamp").first();obj = [obj]
+	    else: obj=RegisterModel.objects(device_imei1=qp["imei"])
+	    return Response({"results": clean(obj)},status=status.HTTP_200_OK)
 	except:
 	    return Response(sf,status=status.HTTP_400_BAD_REQUEST)
 
